@@ -1,8 +1,8 @@
 # Environmental Information Site
 This website provides useful information on the actions you can take to better our environment. Some ideas you may just find pretty interesting!
 
-### Technologies Used
-N/A
+<!-- ### Technologies Used
+N/A -->
 
 ### Remember Do Pull Request 
 [Forget how?](https://yangsu.github.io/pull-request-tutorial/)
@@ -25,10 +25,13 @@ git push origin some-branch
 git clone https://github.com/LWRGitHub/environmental-information-site.git
 ```
 
-**Install**
+<!-- **Install**
+
 N/A
 
 **Run**
 
+N/A
+
 ### Images of Site
-<img alt="..." src="https://github.com/lwrgithub/gif-search-site/blob/master/..." />
+<img alt="..." src="https://github.com/lwrgithub/gif-search-site/blob/master/..." /> -->
