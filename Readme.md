@@ -25,15 +25,12 @@ N/A -->
 ```
 git checkout -b some-feature # Edit some code 
 ```
-2. After editing the code commit & push it!
+2.Commit & push it!
 ```
 git commit -a -m "Add first draft of some feature"
 git push origin some-branch
 ```
-3. [Creat a pull request.](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
-
-
-
+3. [Creat a pull request:](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) If there is a merge conflict you may want to request a [review](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review). Once there are no conflicts complete your merge & delete the branch.
 
 <!-- ### Images of Site
 <img alt="..." src="https://github.com/lwrgithub/gif-search-site/blob/master/..." />  -->
