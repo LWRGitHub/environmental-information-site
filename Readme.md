@@ -46,7 +46,7 @@ git branch -D <local-branch>
 ```
 
 ### Pull Master
-[git info] (https://git-scm.com/docs/git-checkout)
+[git info](https://git-scm.com/docs/git-checkout)
 1. if you have edits make sure they were not on the master, if so you can move to step 2. If not got to step 1 & make a new branch
 ```
 git checkout -b some-feature
