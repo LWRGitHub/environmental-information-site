@@ -33,13 +33,24 @@ git checkout -b some-feature
 git commit -a -m "Add first draft of some feature"
 git push origin some-branch
 ```
-3. Creat a [pull request:](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) If there is a merge conflict you may want to request a [review](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review). Once there are no conflicts complete your merge & delete the branch.
+3. Creat a [pull request:](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) If there is a merge conflict you may want to request a [review](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/requesting-a-pull-request-review). Once there are no conflicts complete your merge & delete the branch on GitHub.
+
+***Delete a Branch on Computer***
+1. See the existing branches.
+```
+git branch -a
+```
+2. Delete the branch you don't want.
+```
+git branch -D <local-branch>
+```
 
 ### Pull Master
 [git info](https://git-scm.com/docs/git-checkout)
-1. if you have edits make sure they were not on the master, if so you can move to step 2. If not make a new branch setp 1; use git comand:
+1. if you have edits make sure they were not on the master, if so you can move to step 2. If not got to step 1 & make a new branch
 ```
 git checkout -b some-feature
+git commit -a -m "Add first draft of some feature"
 ```
 2. Checkout Master
 ```
