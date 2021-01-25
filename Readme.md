@@ -6,6 +6,7 @@ This website provides useful information on the actions you can take to better o
 - Jinja2
 - HTML/CSS
 - Bootstrap
+- Figma: [View](https://www.figma.com/file/aW1j9lTebdS4xTtFqWorsl/GG-Green-Group?node-id=0%3A1)
 
 ### Install/Setup
 
