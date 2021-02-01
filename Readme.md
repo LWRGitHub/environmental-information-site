@@ -13,6 +13,8 @@ This website provides useful information on the actions you can take to better o
 **Clone Repo**
 ```
 git clone https://github.com/LWRGitHub/environmental-information-site.git
+pip3 install flask
+python3 main.py
 ```
 
 <!-- **Install**
