@@ -10,7 +10,6 @@ This website provides useful information on the actions you can take to better o
 
 ### Install/Setup
 
-**Clone Repo**
 ```
 git clone https://github.com/LWRGitHub/environmental-information-site.git
 pip3 install flask
