@@ -12,7 +12,7 @@ This website provides useful information on the actions you can take to better o
 
 ```
 git clone https://github.com/LWRGitHub/environmental-information-site.git
-pip3 install flask
+pip3 install -r requirements.txt
 python3 main.py
 ```
 
@@ -63,6 +63,29 @@ git checkout -q master
 git pull
 ```
 
+### Deploying to Heroku
+1. Create Procfile
+```
+$ cd \<local-directory>
+$ touch Procfile
+$ echo "web: gunicorn app:app" > Procfile
+```
+2. Login to heroku if you haven't already
+```
+$ heroku login
+```
+3. Initialize a git repository in a new or existing directory
+```
+$ cd my-project/
+$ git init
+$ heroku git:remote -a environmental-information-site
+```
+4. Deploy application
+```
+$ git add .
+$ git commit -am "deploy project"
+$ git push heroku master
+```
 
 <!-- ### Images of Site
 <img alt="..." src="https://github.com/lwrgithub/gif-search-site/blob/master/..." />  -->
