@@ -2,6 +2,14 @@ from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, url_for, flash
 import os
 
+# This is for the kickstar
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+import jinja2
+import os
+from pprint import PrettyPrinter
+from random import randint
+
 load_dotenv()
 yelp_api_key = os.getenv('yelp_api_key')
 
@@ -33,5 +41,17 @@ def get_location():
 def homepage():
     return "Hello, world!"
 
+
+''' The code for the kickstarter routes + database is below '''
+@app.route('/kickstarter')
+def kick_list():
+    """Displays the list of startups"""
+
+    startup_data = db.startups.find({})
+
+    context = {
+        'startups' : startup_data
+    }
+    return render_template('startup_list.html', **context)
 if __name__ == '__main__':
     app.run(debug=True)
