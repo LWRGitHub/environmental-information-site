@@ -5,6 +5,12 @@ from pymongo import MongoClient
 import os
 import requests
 
+# This is for the kickstar
+from bson.objectid import ObjectId
+import jinja2
+from pprint import PrettyPrinter
+from random import randint
+
 load_dotenv()
 mongodb_username = os.getenv('mongodb_username')
 mongodb_password = os.getenv('mongodb_password')
@@ -20,6 +26,20 @@ db = client[mongodb_name]
 def homepage():
     return "Hello, world!"
 
+
+
+''' The code for the kickstarter routes + database is below '''
+@app.route('/kickstarter')
+def kick_list():
+    """Displays the list of startups"""
+
+    startup_data = db.startups.find({})
+
+    context = {
+        'startups' : startup_data
+    }
+    return render_template('startup_list.html', **context)
+
 @app.route('/search_store', methods=['GET', 'POST'])
 def search_store():
     ''' Search for local stores '''
@@ -34,9 +54,6 @@ def search_store():
             lat = js['lat']
             lng = js['lon']
 
-            print(lat)
-            print(lng)
-            print(city)
 
         else:
             ip = request.environ['HTTP_X_FORWARDED_FOR']
@@ -48,6 +65,7 @@ def search_store():
             lng = js['lon']
 
     return render_template('search_store.html')
+
 
 
 if __name__ == '__main__':
