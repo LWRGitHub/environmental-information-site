@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Display Store
+{% endblock title %}
+
+{% block content %}
+
+<main>
+{% for business in business_info %}
+<p>Restaurant Name: {{ business['name'] }}</p>
+<p>Number of Reviews: {{ business['review_count'] }}</p>
+<p><img src="{{ business['image_url'] }}" alt="{{ business['image_url'] }} image" width="250"></p>
+{% endfor %}
+</main>
+
+{% endblock content %}
