@@ -1,12 +1,20 @@
 from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, url_for, flash
+from flask_pymongo import PyMongo
+from pymongo import MongoClient
 import os
 import requests
 
 load_dotenv()
+mongodb_username = os.getenv('mongodb_username')
+mongodb_password = os.getenv('mongodb_password')
+mongodb_name = 'kickstarter'
 yelp_api_key = os.getenv('yelp_api_key')
 
 app = Flask(__name__)
+
+client = MongoClient(f"mongodb+srv://{mongodb_username}:{mongodb_password}@cluster0.uzxh5.mongodb.net/{mongodb_name}?retryWrites=true&w=majority")
+db = client[mongodb_name]
 
 @app.route('/')
 def homepage():
