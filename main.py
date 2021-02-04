@@ -42,6 +42,22 @@ def kick_list():
     }
     return render_template('startup_list.html', **context)
 
+
+@app.route('/create_startup', methods=['GET', 'POST'])
+def create_rest():
+    if request.method == 'POST':
+
+        new_startup = {
+            'name': request.form.get('startup_name'),
+            'type': request.form.get('type')
+        }
+
+        insert_result = db.startups.insert_one(new_startup)
+
+        return redirect(url_for('details', startup_id=insert_result.inserted_id))
+    else:
+        return render_template('create_startup.html')
+
 @app.route('/search_store', methods=['GET', 'POST'])
 def search_store():
     ''' Search for local stores '''
