@@ -1,0 +1,52 @@
+{% extends 'kickstarter.html' %}
+{% block content %}
+
+
+<main>
+    <h1>{{startup['name']}}</h1>
+
+
+    <section id="info">
+        <h3>Info</h3>
+
+        <strong>Type</strong>
+        {{startup.type}}
+        <br><br>
+
+
+    </section>
+
+    <form action="/opinion/{{startup.id}}" method="POST">
+        <fieldset>
+            <legend>Opinions:</legend>
+
+            <label>
+                Name
+                <input type="text" name="user_name" placeholder="Salomon C">
+            </label>
+
+            <label>
+                Opinon
+                <input type="text" name="opinion" placeholder="Very Good!">
+            </label>
+
+            <input type="submit" class="submit" value="submit">
+        </fieldset>
+    </form>
+
+    <section id="opinion-history">
+        <h3>Opinion History</h3>
+
+        <ul>
+            {% for opinion in opinions%}
+            <li>{{opinion.name}}: {{opinion.opinion}}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <form action="/delete/{{startup.id}}" method='POST' id="delete-form" onsubmit="return confirm_delete()">
+        <input type="submit" class="nav" onclick="delete_modal()" value="Delete startup">
+    </form>
+</main>
+
+{% endblock content %}
