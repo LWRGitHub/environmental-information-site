@@ -43,6 +43,79 @@ def homepage():
 
 
 
+''' The code for the profile page '''
+@app.route('/profile') #/<user_id>')
+def profile(): #user_id):
+    """Displays the user profile"""
+
+    # profile_data = db.profile.find({})
+
+    context = {
+        'name': "Kicstart Name",
+        'name_info': 'Environmental friendly',
+        'address': ["Address line 1", "Adress line 2"],
+        'info': "Kickstart name is a new environment subgraoup that focuses on weekend community services for highway cleanup",
+        'people_like_this': {
+            'count': 37762, 
+            'img': [
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'https://wwww.enviranmental-info-site.com/img-name.jpg'
+            ]
+        },
+        'folowing': 37822,
+        'friends': 43,
+        'url': 'https://www.kickstartgroup.com/',
+        'phone': 5555555555,
+        'Away': True,
+        'email': "email@website.com",
+        'open_hr': {'open': 800, 'close': 1700},
+        'industry': 'Industry',
+        'photos': [
+            'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'https://wwww.enviranmental-info-site.com/img-name.jpg'
+        ],
+        'videos': {
+            'video':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'info': 'what is most important to you when se...',
+            'views': 88,
+            'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+        },
+        'posts': [
+            {
+                'user_name': 'Ben Chan',
+                'user_img': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
+                'img_vid': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'like_count': 40,
+                'comment_count': 1,
+                'views': 1,
+            },
+            {
+                'user_name': 'Aldrin Brillante',
+                'user_img': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
+                'img_vid': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'like_count': 40,
+                'comment_count': 3,
+                'views': 0,
+            },
+        ]
+    }
+    return render_template('profile.html', **context)
+
+
+
 ''' The code for the kickstarter routes + database is below '''
 @app.route('/kickstarter')
 def kick_list():
