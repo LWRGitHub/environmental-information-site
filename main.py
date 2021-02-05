@@ -74,11 +74,13 @@ def create_rest():
 @app.route('/search_store', methods=['GET', 'POST'])
 def search_store():
     ''' Search for local stores '''
+    # initializes an empty list that will store a list of dictionaries that contain the coordinates for the
+    # markers parameter of business_map
     coordinates_list = []
 
     if request.method == 'POST':
         location = ''
-        #checks if ip address is being forwarded. depends if running locally or deployed
+        # obtains the user's current ip address
         if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
             response = requests.get("http://ip-api.com/json")
             js = response.json()
@@ -97,18 +99,22 @@ def search_store():
             lng = js['lon']
     
         store_name = request.form.get('store_name')
+
+        # yelp api that provides a list of stores with the category vegan near the user's current latitude/longitude
         search_results = yelp_api.search_query(term = store_name, latitude = lat, longitude = lng, categories = "vegan")
         business_info = search_results['businesses']
         
+        # stores pin image and all lat/lng of queried stores into a dictionary to be passed into the map and displayed on the page
         for coordinate in business_info:
             coordinates_dict = {}
             coordinates_dict['icon'] = "/static/images/leaf_pin.png"
             coordinates_dict['lat'] = coordinate['coordinates']['latitude']
             coordinates_dict['lng'] = coordinate['coordinates']['longitude']
 
+            # appends dictionary entry into the list
             coordinates_list.append(coordinates_dict)
-        print(coordinates_list)
 
+        # defines the parameters of the map that will be displayed on the web page
         business_map = Map(
             identifier = "test-map",
             style = "height:700px;width:700px;margin:0;",
