@@ -5,13 +5,25 @@ Display Store
 {% endblock title %}
 
 {% block content %}
+<head>
+    {{ business_map.js }}
+</head>
 
 <main>
-{% for business in business_info %}
-<p>Restaurant Name: {{ business['name'] }}</p>
-<p>Number of Reviews: {{ business['review_count'] }}</p>
-<p><img src="{{ business['image_url'] }}" alt="{{ business['image_url'] }} image" width="250"></p>
-{% endfor %}
+    {% for business in business_info %}
+    <p>Restaurant Name: {{ business['name'] }}</p>
+    <p>Number of Reviews: {{ business['review_count'] }}</p>
+    <p><img src="{{ business['image_url'] }}" alt="{{ business['image_url'] }} image" width="250"></p>
+    {% endfor %}
+
+    <!-- {% with map=googlemap_obj("test-map", 37.4419, -122.1419,
+    markers=[(37.4419, -122.1419), (37.4300, -122.1400)])
+    %}
+    {{map.html}}
+    {{map.js}}
+    {% endwith %} -->
+
+    {{ business_map.html }}
 </main>
 
 {% endblock content %}
