@@ -1,10 +1,13 @@
+from environmental_app import app, db, yelp_api
+from flask import request, render_template, redirect, url_for, flash, Blueprint
+from flask_googlemaps import Map
+import requests
 
+main = Blueprint("main", __name__)
 
 @app.route('/')
 def homepage():
     return "Hello, world!"
-
-
 
 ''' The code for the profile page '''
 @app.route('/profile') #/<user_id>')
