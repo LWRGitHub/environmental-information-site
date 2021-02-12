@@ -1,27 +1,59 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<main class="px-5 mx-5">
-    <!-- Hearder img -->
-    <div class="text-center bg-dark rounded-bottom background-image: url('{{ header_img.src }}');background-size: cover;" aria-label="{{ header_img.alt }}" style="height: 300px;">
-    </div>
-    <!-- selfi img -->
-    <img class="rounded-circle bg-dark" style="position: absolute;height: 100px;width: 100px;left: 120px;top:345px" src="{{ selfi.src }}" alt="{{ selfi.alt }}" />
-    <!-- name & short info -->
-    <div style="position: absolute;left: 250px;top: 360px">
-        <h3 class="font-weight-bold pb-0 mb-0" >{{ name }}</h3>
-        <span>{{ name_info }}</span>
-    </div>
-    <!-- some button -->
-    <button class="bg-success border-0 rounded" style="height: 30px;width: 200px;position: absolute;right:130px;top:420px"></button>
-
-    <hr style="margin-top: 110px;"/>
+<section style="background-image: linear-gradient(rgb(143, 193, 143), white);">
     
-    <div>
-        
+    <!-- Hearder img -->
+    <div class="text-center bg-dark rounded-bottom" aria-label="{{ header_img.alt }}" style="height: 300px;background-image: url('{{ header_img.src }}');background-size: cover;margin-left: 75px;margin-right: 75px;">
     </div>
 
+    <div class="px-5 mx-5">
 
-</main>
+        <!-- selfi img -->
+        <img class="rounded-circle bg-dark" style="position: absolute;height: 100px;width: 100px;left: 120px;top:345px" src="{{ selfi.src }}" alt="{{ selfi.alt }}" />
+        <!-- name & short info -->
+        <div style="position: absolute;left: 250px;top: 360px">
+            <h3 class="font-weight-bold pb-0 mb-0" >{{ name }}</h3>
+            <span>{{ name_info }}</span>
+        </div>
+        <!-- some button -->
+        <button class="bg-success border-0 rounded" style="height: 30px;width: 200px;position: absolute;right:130px;top:420px"></button>
+
+        <!-- Separating line -->
+        <hr style="margin-top: 110px;"/>
+        
+        <!-- Profile navigation bar in header -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            
+            <a class="text-dark nav-link p-0 m-2" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="text-dark nav-link p-0 m-2" href="#">Reviews</a>
+            <a class="text-dark nav-link p-0 m-2" href="#">About</a>
+            <a class="text-dark nav-link p-0 m-2" href="#">Community</a>
+
+            <!-- Dropdown menu -->
+            <a class="text-dark nav-link dropdown-toggle p-0 m-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            
+            <!-- buttons on heder nav -->
+            <button class="border-0 rounded px-2 py-1 m-1">
+                <i class="bi bi-hand-thumbs-up-fill"></i> Liked
+            </button>
+            <button class="border-0 rounded px-2 py-1 m-1">Message</button>
+            <button class="border-0 rounded px-2 py-1 m-1">
+                <i class="bi bi-search"></i>
+            </button>
+            <button class="border-0 rounded px-2 py-1 m-1">...</button>
+            
+        </nav>
+    </div>
+</section>
+<hr />
 
 {% endblock content %}
