@@ -1,6 +1,6 @@
 from environmental_app.config import Config
 from flask import Flask
-from flask_googlemaps import GoogleMaps, Map
+from flask_googlemaps import GoogleMaps
 from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
 from pymongo import MongoClient
