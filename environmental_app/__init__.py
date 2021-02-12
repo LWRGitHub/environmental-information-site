@@ -40,13 +40,12 @@ db = client[mongodb_name]
 
 # Initialize SQL db
 db_sql = SQLAlchemy(app)
+with app.app_context():
+    db_sql.create_all()
 
 # Blueprints
 from environmental_app.routes import main
 app.register_blueprint(main)
 
-from environmental_app.authentication.routes import auth
-app.register_blueprint(auth)
-
-with app.app_context():
-    db_sql.create_all()
+from environmental_app.authentication.routes import authentication
+app.register_blueprint(authentication)
