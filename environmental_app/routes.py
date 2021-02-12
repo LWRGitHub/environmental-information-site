@@ -7,7 +7,7 @@ main = Blueprint("main", __name__)
 
 @app.route('/')
 def homepage():
-    return "Hello, world!"
+    return render_template('home.html')
 
 ''' The code for the profile page '''
 @app.route('/profile') #/<user_id>')
@@ -17,6 +17,14 @@ def profile(): #user_id):
     # profile_data = db.profile.find({})
 
     context = {
+        "header_img": {
+            'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'alt': "..."
+        },
+        'selfi': {
+            'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'alt': "..."
+        },
         'name': "Kicstart Name",
         'name_info': 'Environmental friendly',
         'address': ["Address line 1", "Adress line 2"],
@@ -24,13 +32,34 @@ def profile(): #user_id):
         'people_like_this': {
             'count': 37762, 
             'img': [
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                'https://wwww.enviranmental-info-site.com/img-name.jpg'
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
             ]
         },
         'folowing': 37822,
@@ -42,15 +71,36 @@ def profile(): #user_id):
         'open_hr': {'open': 800, 'close': 1700},
         'industry': 'Industry',
         'photos': [
-            'https://wwww.enviranmental-info-site.com/img-name.jpg',
-            'https://wwww.enviranmental-info-site.com/img-name.jpg',
-            'https://wwww.enviranmental-info-site.com/img-name.jpg',
-            'https://wwww.enviranmental-info-site.com/img-name.jpg',
-            'https://wwww.enviranmental-info-site.com/img-name.jpg',
-            'https://wwww.enviranmental-info-site.com/img-name.jpg'
+            {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
+                {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                }
         ],
         'videos': {
-            'video':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+            'video': {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
             'info': 'what is most important to you when se...',
             'views': 88,
             'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
@@ -58,20 +108,32 @@ def profile(): #user_id):
         'posts': [
             {
                 'user_name': 'Ben Chan',
-                'user_img': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'user_img': {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
                 'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
-                'img_vid': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'img_vid': {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
                 'like_count': 40,
                 'comment_count': 1,
                 'views': 1,
             },
             {
                 'user_name': 'Aldrin Brillante',
-                'user_img': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'user_img': {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
                 'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
-                'img_vid': 'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                'img_vid': {
+                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'alt': "..."
+                },
                 'like_count': 40,
                 'comment_count': 3,
                 'views': 0,
