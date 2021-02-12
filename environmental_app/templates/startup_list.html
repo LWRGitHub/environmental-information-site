@@ -1,0 +1,42 @@
+{% extends 'kickstarter.html' %}
+{% block content%}
+
+
+<section class="jumbotron text-center main-img">
+    <div class="container">
+        <div class="darkbg">
+            <h1>Title</h1>
+            <p class="lead " style="color: white;">Descriptive Text</p>
+        </div>
+    </div>
+</section>
+
+
+<div class="row">
+    {% for startup in startups %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm"><a href="/startup/{{startup._id}}">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                    aria-label="Placeholder: Thumbnail">
+                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                        dy=".3em">{{startup.name}}</text>
+                </svg>
+                <div class="card-body">
+                    <p class="card-text">{{startup.type}}</p>
+            </a>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Yes</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">No</button>
+                </div>
+                <small id="votes" class="text-muted">2 votes</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock content %}
