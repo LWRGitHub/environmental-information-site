@@ -30,9 +30,12 @@ GoogleMaps(app, key = google_maps_api_key)
 client = MongoClient(f"mongodb+srv://{mongodb_username}:{mongodb_password}@cluster0.uzxh5.mongodb.net/{mongodb_name}?retryWrites=true&w=majority")
 db = client[mongodb_name]
 
+# Initialize SQL db
+db_sql = SQLAlchemy(app)
+
 # Blueprints
 from environmental_app.routes import main
 app.register_blueprint(main)
 
-# with app.app_context():
-#     db.create_all()
+with app.app_context():
+    db_sql.create_all()
