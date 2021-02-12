@@ -7,7 +7,7 @@ main = Blueprint("main", __name__)
 
 @app.route('/')
 def homepage():
-    return "Hello, world!"
+    return render_template('home.html')
 
 ''' The code for the profile page '''
 @app.route('/profile') #/<user_id>')
