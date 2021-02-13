@@ -1,5 +1,7 @@
 from environmental_app.config import Config
 from flask import Flask
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 from flask_googlemaps import GoogleMaps
 from flask_pymongo import PyMongo
 from flask_sqlalchemy import SQLAlchemy
@@ -23,6 +25,12 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config.from_object(Config)
 
+# Initialize authentication
+bcrypt = Bcrypt(app)
+login = LoginManager()
+login.login_view = 'auth.login'
+login.init_app(app)
+
 # Initialize flask Google Maps
 GoogleMaps(app, key = google_maps_api_key)
 
@@ -36,6 +44,9 @@ db_sql = SQLAlchemy(app)
 # Blueprints
 from environmental_app.routes import main
 app.register_blueprint(main)
+
+from environmental_app.authentication.routes import authentication
+app.register_blueprint(authentication)
 
 with app.app_context():
     db_sql.create_all()

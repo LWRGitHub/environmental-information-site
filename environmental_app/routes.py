@@ -1,6 +1,7 @@
 from environmental_app import app, db, yelp_api
 from flask import request, render_template, redirect, url_for, flash, Blueprint
 from flask_googlemaps import Map
+from flask_login import current_user
 import requests
 
 main = Blueprint("main", __name__)
@@ -209,7 +210,7 @@ def search_store():
         # stores pin image and all lat/lng of queried stores into a dictionary to be passed into the map and displayed on the page
         for coordinate in business_info:
             coordinates_dict = {}
-            coordinates_dict['icon'] = "/static/images/leaf_pin.png"
+            coordinates_dict['icon'] = "/static/img/leaf_pin.png"
             coordinates_dict['lat'] = coordinate['coordinates']['latitude']
             coordinates_dict['lng'] = coordinate['coordinates']['longitude']
 
