@@ -70,22 +70,48 @@
                 <div class="col-4 pr-1">
                         
                     <!-- About Row -->
-                    <div class="row rounded p-0 mx-0 mb-2" style="background-color: white;">
+                    <div class="row rounded p-2 mx-0 mb-2" style="background-color: white;">
+
+                        <h6 class="font-weight-bold">About</h6>
+
                         <!-- Map -->
-                        <iframe >
+                        <iframe class="rounded">
                         </iframe>
-                            <span >
-                                {{ info }}
-                            </span>
 
-                            <i class="bi bi-hand-thumbs-up"></i>
-                            <span class="pl-3">
-                                {{ people_like_this.count }} people like this, including {{ people_like_this.frind_count }} of your friends
-                            </span>
+                        <!-- -----lots of about section info----- -->
+                        <i class="bi bi-info-circle-fill"></i>
+                        <small class="pl-3">
+                            {{ info }}
+                        </small>
 
-                            <span ></span>
-                            <span ></span>
-                            <span ></span>
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <small class="pl-3">
+                            {{ people_like_this.count }} people like this, including {{ people_like_this.frind_count }} of your friends
+                            <br />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[0].src }}" alt="{{ people_like_this.img[0].alt }}" />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[1].src }}" alt="{{ people_like_this.img[1].alt }}" />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[2].src }}" alt="{{ people_like_this.img[2].alt }}" />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[3].src }}" alt="{{ people_like_this.img[3].alt }}" />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[4].src }}" alt="{{ people_like_this.img[4].alt }}" />
+                            <img class="rounded-circle bg-success" src="{{ people_like_this.img[5].src }}" alt="{{ people_like_this.img[5].alt }}" />
+                            <span class="rounded-circle bg-success" style="height: 30px; width: 30px">...</span>
+                        </small>
+
+                        <i class="bi bi-check-all"></i>
+                        <small class="pl-3">
+                            {{ folowing }}people follow this
+                        </small>
+
+                        <br />
+
+                        <i class="bi bi-people-fill"></i>
+                        <small class="pl-3">
+                            {{ friends_participated }} friends participated here
+                        </small>
+
+                        <small class="pl-3"></small>
+                        <small class="pl-3"></small>
+                        <!-- -----/lots of about section info----- -->
                         
                     </div>
 
