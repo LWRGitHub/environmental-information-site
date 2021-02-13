@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section style="background-image: linear-gradient(rgb(143, 193, 143), white);">
+<!-- header -->
+<header style="background-image: linear-gradient(rgb(143, 193, 143), white);">
     
     <!-- Hearder img -->
     <div class="text-center bg-dark rounded-bottom" aria-label="{{ header_img.alt }}" style="height: 300px;background-image: url('{{ header_img.src }}');background-size: cover;margin-left: 75px;margin-right: 75px;">
@@ -43,7 +44,7 @@
             
             <!-- buttons on heder nav -->
             <button class="border-0 rounded px-2 py-1 m-1">
-                <i class="bi bi-hand-thumbs-up-fill"></i> Liked
+                <i class="bi bi-hand-thumbs-up"></i> Liked
             </button>
             <button class="border-0 rounded px-2 py-1 m-1">Message</button>
             <button class="border-0 rounded px-2 py-1 m-1">
@@ -53,7 +54,78 @@
             
         </nav>
     </div>
-</section>
-<hr />
+</header>
+
+<hr class="my-0 py-0" />
+
+<!-- main body area -->
+<main>
+    <section class="px-5 mx-5">
+
+        <div class="container mt-2">
+            <div class="row">
+
+                <!-- -----Left Columns----- -->
+                <div class="col-4 pr-1">
+                        
+                    <!-- About Row -->
+                    <div class="row rounded p-0 mx-0 mb-2" style="background-color: white;">
+                        <!-- Map -->
+                        <iframe >
+                        </iframe>
+                            <span >
+                                {{ info }}
+                            </span>
+
+                            <i class="bi bi-hand-thumbs-up"></i>
+                            <span class="pl-3">
+                                {{ people_like_this.count }} people like this, including {{ people_like_this.frind_count }} of your friends
+                            </span>
+
+                            <span ></span>
+                            <span ></span>
+                            <span ></span>
+                        
+                    </div>
+
+                    <!-- Photos Row -->
+                    <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
+                    Photos
+                    </div>
+
+                    <!-- Videos Row -->
+                    <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
+                    Videos
+                    </div>
+
+                </div>
+                <!-- -----/Left Columns----- -->
+
+                <!-- -----Right Columns----- -->
+                <div class="col-8 pl-1">
+                    
+                    <!-- Create Post Row -->
+                    <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
+                        Create Post
+                    </div>
+
+                    <!-- Pinned Post Row -->
+                    <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
+                        Pinned Post
+                    </div>
+
+                    <!-- Other Posts Row -->
+                    <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
+                        Other Posts
+                    </div>
+
+                </div>
+                <!-- -----/Right Columns----- -->
+
+            </div>
+        </div>
+
+    </section>
+</main>
 
 {% endblock content %}
