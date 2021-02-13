@@ -32,6 +32,7 @@ def profile(): #user_id):
         'info': "Kickstart name is a new environment subgraoup that focuses on weekend community services for highway cleanup",
         'people_like_this': {
             'count': 37762, 
+            'frind_count': 25,
             'img': [
                 {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',

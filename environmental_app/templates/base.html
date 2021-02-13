@@ -21,29 +21,31 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body>
+<body style="background-color: rgb(220, 240, 220);">
     
-    <header>
+    <header style="background-color: white;">
 
         <nav class="navbar navbar-light justify-content-between">
-            
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <img style="position:absolute;left:14px;top:10px" src="../static/img/gg-logo.png" alt="GG logo" width="35px" />
-                </li>
-                <li class="nav-item">
-                    <span style="position:absolute;left:23px;top:27px">gg</span>
-                </li>
-            </ul>
+            <a href="/">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                        <img style="position:absolute;left:14px;top:10px" src="../static/img/gg-logo.png" alt="GG logo" width="35px" />
+                  </li>
+                  <li class="nav-item">
+                      <span style="position:absolute;left:23px;top:27px">gg</span>
+                  </li>
+              </ul>
+            </a>
             
             <form class="form-inline" style="position:absolute;left:60px;">
                 <input class="form-control mr-sm-2 bg-light border-0" style="border-radius: 25px;" type="search" placeholder="&#128269;  Search Green Group" aria-label="Search">
             </form>
             
+            <a class="navbar-brand">
+                <i class="bi bi-gear"></i>
+            </a>
             <a class="navbar-brand">Navbar</a>
 
-            <!-- Temporary Navbar -->
-            <a href="/">Home</a>
                 <div>
                     <a href="/profile">Profile</a>
 
