@@ -57,15 +57,11 @@ def profile(): #user_id):
                 {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
                     'alt': "..."
-                },
-                {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
-                    'alt': "..."
-                },
+                }
             ]
         },
         'folowing': 37822,
-        'friends': 43,
+        'friends_participated': 43,
         'url': 'https://www.kickstartgroup.com/',
         'phone': 5555555555,
         'Away': True,
