@@ -64,7 +64,7 @@ def profile(): #user_id):
         'friends_participated': 43,
         'url': 'https://www.kickstartgroup.com/',
         'phone': 5555555555,
-        'Away': True,
+        'away': True,
         'email': "email@website.com",
         'open_hr': {'open': 800, 'close': 1700},
         'industry': 'Industry',

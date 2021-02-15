@@ -97,32 +97,56 @@
                             <span class="rounded-circle bg-success" style="height: 30px; width: 30px">...</span>
                         </small>
 
+                        <br />
+
                         <i class="bi bi-check-all"></i>
                         <small class="pl-3">
                             {{ folowing }}people follow this
                         </small>
 
-                        <br />
 
                         <i class="bi bi-people-fill"></i>
                         <small class="pl-3">
                             {{ friends_participated }} friends participated here
                         </small>
 
-                        <small class="pl-3"></small>
-                        <small class="pl-3"></small>
+                        <i class="bi bi-globe2"></i>
+                        <small class="pl-3">{{ url }}</small>
+
+                        <i class="bi bi-telephone-fill"></i>
+                        <small class="pl-3">{{ phone }}</small>
+
+                        <i class="bi bi-chat-left-text-fill"></i>
+                        <small class="pl-3">
+                            {% if away %}
+                                Away
+                            {% else %}
+                                Online
+                            {% endif %}
+                            <a class="pl-3">Send message</a>
+                        </small>
+                        
+
+                        <i class="bi bi-envelope-fill"></i>
+                        <small class="pl-3">{{ email }}</small>
+
+                        <i class="bi bi-clock-fill"></i>
+                        <small class="pl-3">{{ open_hr.open }} - {{ open_hr.close }}></small>
+
+                        <i class="bi bi-folder-fill"></i>
+                        <small class="pl-3">{{ industry }}</small>
                         <!-- -----/lots of about section info----- -->
                         
                     </div>
 
                     <!-- Photos Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
-                    Photos
+                        <h6 class="font-weight-bold">Photos</h6>
                     </div>
 
                     <!-- Videos Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
-                    Videos
+                        <h6 class="font-weight-bold">Videos</h6>
                     </div>
 
                 </div>
@@ -133,17 +157,17 @@
                     
                     <!-- Create Post Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
-                        Create Post
+                        <h6 class="font-weight-bold">Create Post</h6>
                     </div>
 
                     <!-- Pinned Post Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
-                        Pinned Post
+                        <h6 class="font-weight-bold">Pinned Post</h6>
                     </div>
 
                     <!-- Other Posts Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
-                        Other Posts
+                        <h6 class="font-weight-bold">Other Posts</h6>
                     </div>
 
                 </div>
