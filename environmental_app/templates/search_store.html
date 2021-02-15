@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Find Store
+{% endblock title %}
+
+{% block content %}
+
+<main>
+    <form method='POST'>
+        <fieldset>
+            <legend>Test form</legend>
+
+            <label>
+                Store name:
+                <input type="text" name="store_name">
+            </label>
+            <input type="submit" class="submit" value="Search using my location!">
+
+        </fieldset>
+</main>
+
+{% endblock content %}

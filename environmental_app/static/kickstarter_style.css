@@ -1,0 +1,184 @@
+/* Styles code inspired by Bootstrap Album page and WEB1.1 Homework 5 and EAT OUT Project */
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+body {
+    color: #222;
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+main {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    background-color:  #e81313;
+    position: relative;
+    top: 0;
+    left: 0
+}
+
+nav a {
+    margin: auto 0;
+    padding: 0 25px;
+    background-color:  #e81313;
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #e81313;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+a.nav, input.nav, form input.submit {
+    border: none;
+    background-color:  #e81313;
+    border-radius: 3px;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+
+.red {
+    color: #e81313
+}
+
+.main-img {
+    background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1494&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: 100%;
+}
+
+.darkbg {
+    background-color: rgba(0, 0, 0, 0.224);
+    border-radius: 10px;
+}
+
+
+
+div.card-content a {
+    color:  #e81313;
+    font-weight: bold;
+    text-decoration: none;
+    align-self: center;
+}
+
+h1, h2, h3 {
+    color:  #e81313;
+    font-family: 'Homemade Apple', cursive;
+}
+
+form {
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form fieldset {
+    border: 1px solid  #e81313;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+form legend {
+    color:  #e81313;
+    text-align: center;
+    font-family: 'Homemade Apple', cursive;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+form input {
+    border: 1px solid  #e81313;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 700px;
+}
+
+form input.submit {
+    align-self: flex-end;
+}
+
+form#delete-form {
+    display: flex;
+    align-items: center;
+}
+
+div.info {
+    margin-top: 30px;
+}
+
+div.harvest-history {
+    margin: 30px 0;
+    color: #666;
+}
