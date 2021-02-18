@@ -47,23 +47,8 @@ input[type=submit] {
     align-self: flex-end;
 }
 
-div.store {
+div.startup {
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 10px;
-}
-
-div.items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-div.item-details {
-    border: 1px solid black;
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
-    width: 250px;
-    height: 300px;
 }
