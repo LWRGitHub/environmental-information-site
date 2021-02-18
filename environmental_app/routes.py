@@ -1,3 +1,7 @@
+import flask_login
+from environmental_app.forms import KickstarterForm
+from flask_login.utils import login_required
+from environmental_app.models import Kickstarter
 from environmental_app import app, db, yelp_api
 from flask import request, render_template, redirect, url_for, flash, Blueprint
 from flask_googlemaps import Map
@@ -147,28 +151,32 @@ def profile(): #user_id):
 def kick_list():
     """Displays the list of startups"""
 
-    startup_data = db.startups.find({})
-
-    context = {
-        'startups' : startup_data
-    }
-    return render_template('startup_list.html', **context)
+    startups = Kickstarter.query.all()
+    return render_template('startup_list.html', startups=startups )
 
 
 @app.route('/create_startup', methods=['GET', 'POST'])
+@login_required
 def create_rest():
-    if request.method == 'POST':
+    form = KickstarterForm()
+    if form.validate_on_submit():
 
-        new_startup = {
-            'name': request.form.get('startup_name'),
-            'type': request.form.get('type')
-        }
+        new_startup = Kickstarter(
+            title = form.title.data,
+            photo_url= form.photo_url.data,
+            vide_url=form.video_url.data,
+            created_by = flask_login.current_user,
+            end_date=form.end_date.data,
+            money_goal=form.money_goal.data,
+            description=form.description.data
+        )
 
-        insert_result = db.startups.insert_one(new_startup)
+        db.session.add(new_startup)
+        db.session.commit()
 
-        return redirect(url_for('details', startup_id=insert_result.inserted_id))
+        return redirect(url_for('main.details', startup_id=new_startup.id))
     else:
-        return render_template('create_startup.html')
+        return render_template('create_startup.html', form=form)
 
 @app.route('/search_store', methods=['GET', 'POST'])
 def search_store():
