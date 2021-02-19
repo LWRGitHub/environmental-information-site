@@ -36,11 +36,11 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember = True)
             next_page = request.args.get('next')
-            return redirect(next_page if next_page else url_for('homepage'))
+            return redirect(next_page if next_page else url_for('main.homepage'))
 
     return render_template('login.html', form = form)
 
 @authentication.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('homepage'))
+    return redirect(url_for('main.homepage'))

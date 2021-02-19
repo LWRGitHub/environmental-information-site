@@ -2,27 +2,36 @@
 {% block content %}
 
 
-<main>
-    <h1>Create Startup</h1>
+<h1>New Startup</h1>
 
-    <form method='POST'>
-        <fieldset>
-            <legend>Please fill out your Startup's info:</legend>
+<form method="POST">
+    {{ form.csrf_token }}
+    <fieldset>
+        <legend>New Item</legend>
+        {{form.title.label}}
+        {{form.title}}
 
-            <label>
-                Startup's name:
-                <input type="text" name="startup_name">
-            </label>
+        {{form.photo_url.label}}
+        {{form.photo_url}}
 
-            <label>
-                Startup's type:
-                <input type="text" name="type">
-            </label>
+        {{form.video_url.label}}
+        {{form.video_url}}
+
+        {{form.end_date.label}}
+        {{form.end_date}}
+
+        {{form.money_goal.label}}
+        {{form.money_goal}}
+
+        {{form.description.label}}
+        {{form.description}}
+        
 
 
-            <input type="submit" class="submit" value="Submit!">
-        </fieldset>
-    </form>
-</main>
+        {{form.submit}}
+
+
+    </fieldset>
+</form>
 
 {% endblock content %}
