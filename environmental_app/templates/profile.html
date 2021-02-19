@@ -79,80 +79,80 @@
                         </iframe>
 
                         <!-- -----lots of about section info----- -->
-                        <div>
-                            <i class="bi bi-info-circle-fill"></i>
-                            <small class="pl-3">
-                                {{ info }}
-                            </small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-hand-thumbs-up-fill"></i>
-                            <small class="pl-3">
-                                {{ people_like_this.count }} people like this, including {{ people_like_this.frind_count }} of your friends
-                                <br />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[0].src }}" alt="{{ people_like_this.img[0].alt }}" />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[1].src }}" alt="{{ people_like_this.img[1].alt }}" />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[2].src }}" alt="{{ people_like_this.img[2].alt }}" />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[3].src }}" alt="{{ people_like_this.img[3].alt }}" />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[4].src }}" alt="{{ people_like_this.img[4].alt }}" />
-                                <img class="rounded-circle bg-success" src="{{ people_like_this.img[5].src }}" alt="{{ people_like_this.img[5].alt }}" />
-                                <span class="rounded-circle bg-success" style="height: 30px; width: 30px">...</span>
-                            </small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-check-all"></i>
-                            <small class="pl-3">
-                                {{ folowing }}people follow this
-                            </small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-people-fill"></i>
-                            <small class="pl-3">
-                                {{ friends_participated }} friends participated here
-                            </small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-globe2"></i>
-                            <small class="pl-3">{{ url }}</small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-telephone-fill"></i>
-                            <small class="pl-3">{{ phone }}</small>
-                        </div>
-
-                        <br />
-
-                        <div>
-                            <i class="bi bi-chat-left-text-fill"></i>
-                            <small class="pl-3">
-                                {% if away %}
-                                    Away
-                                {% else %}
-                                    Online
-                                {% endif %}
-                                <a class="pl-3">Send message</a>
-                            </small>
-                        </div>
-                            
-                        <div>
-                            <i class="bi bi-envelope-fill"></i>
-                            <small class="pl-3">{{ email }}</small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-clock-fill"></i>
-                            <small class="pl-3">{{ open_hr.open }} - {{ open_hr.close }}></small>
-                        </div>
-
-                        <div>
-                            <i class="bi bi-folder-fill"></i>
-                            <small class="pl-3">{{ industry }}</small>
-                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <i class="bi bi-info-circle-fill"></i>
+                                <small class="pl-3">
+                                    {{ info }}
+                                </small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-hand-thumbs-up-fill"></i>
+                                <small class="pl-3">
+                                    {{ people_like_this.count }} people like this, including {{ people_like_this.frind_count }} of your friends
+                                    <br />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[0].src }}" alt="{{ people_like_this.img[0].alt }}" />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[1].src }}" alt="{{ people_like_this.img[1].alt }}" />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[2].src }}" alt="{{ people_like_this.img[2].alt }}" />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[3].src }}" alt="{{ people_like_this.img[3].alt }}" />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[4].src }}" alt="{{ people_like_this.img[4].alt }}" />
+                                    <img class="rounded-circle bg-success" src="{{ people_like_this.img[5].src }}" alt="{{ people_like_this.img[5].alt }}" />
+                                    <span class="rounded-circle bg-success" style="height: 30px; width: 30px">...</span>
+                                </small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-check-all"></i>
+                                <small class="pl-3">
+                                    {{ folowing }}people follow this
+                                </small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-people-fill"></i>
+                                <small class="pl-3">
+                                    {{ friends_participated }} friends participated here
+                                </small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-globe2"></i>
+                                <small class="pl-3">{{ url }}</small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <small class="pl-3">{{ phone }}</small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-chat-left-text-fill"></i>
+                                <small class="pl-3">
+                                    {% if away %}
+                                        Away
+                                    {% else %}
+                                        Online
+                                    {% endif %}
+                                    <a class="pl-3">Send message</a>
+                                </small>
+                            </li>
+                                
+                            <li class="list-group-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <small class="pl-3">{{ email }}</small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-clock-fill"></i>
+                                <small class="pl-3">{{ open_hr.open }} - {{ open_hr.close }}</small>
+                            </li>
+    
+                            <li class="list-group-item">
+                                <i class="bi bi-folder-fill"></i>
+                                <small class="pl-3">{{ industry }}</small>
+                            </li>
+                        </ul>
                         <!-- -----/lots of about section info----- -->
                         
                     </div>
@@ -160,11 +160,46 @@
                     <!-- Photos Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
                         <h6 class="font-weight-bold">Photos</h6>
+                        <a href="">See all</a>
+
+                        <!-- -----img grid----- -->
+                        <div class="container">
+                            <!-- row 1 -->
+                            <div class="row">
+                                {% for i in range(3) %}
+                                <div class="col-4">
+                                    <img src="{{ photos[i] }}" alt="{{ photos[i] }}" />
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!-- row 2 -->
+                            <div class="row">
+                                {% for i in range(3) %}
+                                <div class="col-4">
+                                    <img src="{{ photos[i+3] }}" alt="{{ photos[i+3] }}" />
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <!-- -----/img grid----- -->
+
                     </div>
 
                     <!-- Videos Row -->
                     <div class="row rounded p-0 mx-0 my-2" style="background-color: white;">
                         <h6 class="font-weight-bold">Videos</h6>
+
+                        <!-- -----vid grid----- -->
+                        <div class="container">
+                            <!-- row 1 -->
+                            <div class="row">
+                            <iframe src="{{ videos.video.src }}" alt="{{ videos.video.alt }}"></iframe>
+                            <p>{{ videos.info }}</p>
+                            <small></small>
+                            </div>
+                        </div>
+                        <!-- -----/vid grid----- -->
+
                     </div>
 
                 </div>
