@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Kick Starter Marketplace</h1>
+
+<p><em>The best place to find the hottest Startups!</em></p>
+
+<h2>All Stores</h2>
+
+{% for startup in startups %}
+<div class="startup">
+    <a href="/startup/{{ startup.id }}">{{ startup.name }}</a> -
+    
+    <p><strong>Goal:</strong> {{ startup.money_goal }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

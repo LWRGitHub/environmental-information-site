@@ -1,1 +1,14 @@
-<!-- Populate this with the visuals of the startup -->
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Startup - {{startup.title}} </h1>
+
+<p><img src="{{ startup.photo_url }}" width="250px" height="250px"></p>
+
+<p><strong>Description:</strong> {{ startup.description }}</p>
+
+<p><strong>Fund Raising Goal:</strong> {{startup.money_goal}}</p>
+<p><strong>End date:</strong> {{startup.end_datel}}</p>
+
+
+{% endblock %}
