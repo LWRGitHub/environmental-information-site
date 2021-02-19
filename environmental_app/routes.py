@@ -179,6 +179,13 @@ def create_startup():
     else:
         return render_template('create_startup.html', form=form)
 
+@main.route('/startup/<startup_id>', methods=['GET', 'POST'])
+@login_required
+def details(startup_id):
+    startup = Kickstarter.query.get(startup_id)
+    return render_template('details.html', startup=startup)
+
+
 @main.route('/search_store', methods=['GET', 'POST'])
 def search_store():
     ''' Search for local stores '''
