@@ -13,7 +13,7 @@ class KickstarterForm(FlaskForm):
                         DataRequired(), Length(min=3, max=80)])
     photo_url = StringField("Photo Url", validators=[URL(), DataRequired()])
     video_url = StringField("Video Url", validators=[URL(), DataRequired()])
-    end_date = DateField("End Date")
+    end_date = StringField("End Date")
     money_goal = FloatField("Fundraising Goal")
     description = TextAreaField("Description", validators=[DataRequired(),Length(min=3, max=10000)])
     submit = SubmitField("Submit")

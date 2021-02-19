@@ -16,6 +16,6 @@ class Kickstarter(db_sql.Model):
     video_url = db_sql.Column(URLType)
     created_by_id = db_sql.Column(db_sql.Integer, db_sql.ForeignKey('user.id'))
     created_by = db_sql.relationship('User')
-    end_date = db_sql.Column(db_sql.Date(), nullable=False)
+    end_date = db_sql.Column(db_sql.String(80), nullable=False)
     money_goal = db_sql.Column(db_sql.Float(precision=2), nullable=False)
     description = db_sql.Column(db_sql.String(), nullable=False)
