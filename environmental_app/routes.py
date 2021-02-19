@@ -154,7 +154,7 @@ def kick_list():
     """Displays the list of startups"""
 
     startups = Kickstarter.query.all()
-    return render_template('startup_list.html', startups=startups )
+    return render_template('startup_list.html', startups=startups ) 
 
 
 @main.route('/create_startup', methods=['GET', 'POST'])
