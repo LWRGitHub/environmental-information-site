@@ -107,32 +107,37 @@ def profile(): #user_id):
                 },
             'info': 'what is most important to you when se...',
             'views': 88,
-            'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+            'date_added': "Yesterday at 14:03", 
         },
-        'posts': [
+        'pinned_post': [
             {
                 'user_name': 'Ben Chan',
                 'user_img': {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
                     'alt': "..."
                 },
-                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'date_added': 'Yesterday at 14:03', 
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
                 'img_vid': {
+                    'is_img': True,
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
                     'alt': "..."
                 },
                 'like_count': 40,
                 'comment_count': 1,
+                'share': 1,
                 'views': 1,
-            },
+            }
+        ],
+        'posts': [
+            
             {
                 'user_name': 'Aldrin Brillante',
                 'user_img': {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
                     'alt': "..."
                 },
-                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'date_added': "Yesterday at 14:03",
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
                 'img_vid': {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
