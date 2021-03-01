@@ -76,27 +76,27 @@ def profile(): #user_id):
         'industry': 'Industry',
         'photos': [
             {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 }
         ],
@@ -113,14 +113,14 @@ def profile(): #user_id):
             {
                 'user_name': 'Ben Chan',
                 'user_img': {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'',
                     'alt': "..."
                 },
                 'date_added': 'Yesterday at 14:03', 
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
                 'img_vid': {
                     'is_img': True,
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 'like_count': 40,
