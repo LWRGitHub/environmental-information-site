@@ -1,17 +1,23 @@
+import flask_login
+from environmental_app.forms import KickstarterForm
+from flask_login.utils import login_required
+from environmental_app.models import Kickstarter
 from environmental_app import app, db, yelp_api
 from flask import request, render_template, redirect, url_for, flash, Blueprint
 from flask_googlemaps import Map
 from flask_login import current_user
 import requests
+from environmental_app import db_sql
+
 
 main = Blueprint("main", __name__)
 
-@app.route('/')
+@main.route('/')
 def homepage():
     return render_template('home.html')
 
 ''' The code for the profile page '''
-@app.route('/profile') #/<user_id>')
+@main.route('/profile') #/<user_id>')
 def profile(): #user_id):
     """Displays the user profile"""
 
@@ -70,27 +76,27 @@ def profile(): #user_id):
         'industry': 'Industry',
         'photos': [
             {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 }
         ],
@@ -101,32 +107,37 @@ def profile(): #user_id):
                 },
             'info': 'what is most important to you when se...',
             'views': 88,
-            'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+            'date_added': "Yesterday at 14:03", 
         },
-        'posts': [
+        'pinned_post': [
             {
                 'user_name': 'Ben Chan',
                 'user_img': {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'src':'',
                     'alt': "..."
                 },
-                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'date_added': 'Yesterday at 14:03', 
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
                 'img_vid': {
-                    'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
+                    'is_img': True,
+                    'src':'/static/img/ph.png',
                     'alt': "..."
                 },
                 'like_count': 40,
                 'comment_count': 1,
+                'share': 1,
                 'views': 1,
-            },
+            }
+        ],
+        'posts': [
+            
             {
                 'user_name': 'Aldrin Brillante',
                 'user_img': {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
                     'alt': "..."
                 },
-                'date_added': 10220, # you can't have it start with 0 so if it was posted on 01-02-2020 then date_added would be 10220
+                'date_added': "Yesterday at 14:03",
                 'details': "Amazing group! I was able to learn so much from you guys! It's because of y'all that I was motivated to start my own kickstart in my local comunity! Can't wait to inspire more people to be green! :)",
                 'img_vid': {
                     'src':'https://wwww.enviranmental-info-site.com/img-name.jpg',
@@ -143,34 +154,44 @@ def profile(): #user_id):
 
 
 ''' The code for the kickstarter routes + database is below '''
-@app.route('/kickstarter')
+@main.route('/kickstarter')
 def kick_list():
     """Displays the list of startups"""
 
-    startup_data = db.startups.find({})
-
-    context = {
-        'startups' : startup_data
-    }
-    return render_template('startup_list.html', **context)
+    startups = Kickstarter.query.all()
+    return render_template('startup_list.html', startups=startups ) 
 
 
-@app.route('/create_startup', methods=['GET', 'POST'])
-def create_rest():
-    if request.method == 'POST':
+@main.route('/create_startup', methods=['GET', 'POST'])
+@login_required
+def create_startup():
+    form = KickstarterForm()
+    if form.validate_on_submit():
 
-        new_startup = {
-            'name': request.form.get('startup_name'),
-            'type': request.form.get('type')
-        }
+        new_startup = Kickstarter(
+            title = form.title.data,
+            photo_url= form.photo_url.data,
+            video_url=form.video_url.data,
+            created_by = flask_login.current_user,
+            end_date=form.end_date.data,
+            money_goal=form.money_goal.data,
+            description=form.description.data
+        )
+        db_sql.session.add(new_startup)
+        db_sql.session.commit()
 
-        insert_result = db.startups.insert_one(new_startup)
-
-        return redirect(url_for('details', startup_id=insert_result.inserted_id))
+        return redirect(url_for('main.kick_list'))
     else:
-        return render_template('create_startup.html')
+        return render_template('create_startup.html', form=form)
 
-@app.route('/search_store', methods=['GET', 'POST'])
+@main.route('/startup/<startup_id>', methods=['GET', 'POST'])
+@login_required
+def details(startup_id):
+    startup = Kickstarter.query.get(startup_id)
+    return render_template('details.html', startup=startup)
+
+
+@main.route('/search_store', methods=['GET', 'POST'])
 def search_store():
     ''' Search for local stores '''
     # initializes an empty list that will store a list of dictionaries that contain the coordinates for the
