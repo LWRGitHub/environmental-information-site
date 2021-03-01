@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
+<link rel="stylesheet" href="/static/center.css">
+<div class="center">
+    <h1>Kick Starter Marketplace</h1>
 
-<h1>Kick Starter Marketplace</h1>
+    <p><em>The best place to find the hottest Startups!</em></p>
 
-<p><em>The best place to find the hottest Startups!</em></p>
-
-<h2>All Stores</h2>
-
-{% for startup in startups %}
-<div class="startup">
-    <a href="/startup/{{ startup.id }}">{{ startup.title }}</a> -
-    
-    <p><strong>Goal:</strong> {{ startup.money_goal }}</p>
+    <h2>All Stores</h2>
+    <div class="startups">
+    {% for startup in startups %}
+        <div class="startup">
+            <p><img src="{{ startup.photo_url }}" width="250px" height="250px"></p>
+            <a href="/startup/{{ startup.id }}">{{ startup.title }}</a> -
+            
+            <p><strong>Goal:</strong> {{ startup.money_goal }}</p>
+            <p><strong>End Date:</strong> {{ startup.end_date }}</p>
+        </div>
+    {% endfor %}
+    </div>
 </div>
-{% endfor %}
+
 
 {% endblock %}
