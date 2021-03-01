@@ -51,10 +51,10 @@
 
                     {% if current_user.is_authenticated %}
                         <!-- Dropdown menu -->
-    <a class="text-dark nav-link dropdown-toggle p-0 m-2" href="/profile" id="navbarDropdown" role="button"
+    <!-- <a class="text-dark nav-link dropdown-toggle p-0 m-2" href="/profile" id="navbarDropdown" role="button"
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Profile
-    </a>
+    </a> -->
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="text-dark" href="/logout">Log Out</a>
     </div>
@@ -67,7 +67,7 @@
     </nav>
 
 
-    </header> -->
+    </header>
 
     <header>
         <!-- Header -->
@@ -98,7 +98,6 @@
 
 
     {% block content %}{% endblock %}
-
     <footer></footer>
 
 

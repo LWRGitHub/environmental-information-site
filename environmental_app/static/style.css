@@ -5,9 +5,12 @@
 	box-sizing: border-box;
 }
 html {
-	font-size: 10px;
+	/* font-size: 10px; */
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+}
+.homepage {
+	font-size: 10px;
 }
 a {
 	text-decoration: none;
@@ -63,7 +66,7 @@ p {
 	background-color: #ABE7A1;
 }
 .brand h1 {
-	font-size: 3rem;
+	/* font-size: 3rem; */
 	text-transform: uppercase;
 	color: white;
 }
@@ -91,7 +94,7 @@ p {
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	max-width: 1300px;
+	/* max-width: 1300px; */
 	padding: 0 10px;
 }
 #header .nav-list ul {
@@ -567,16 +570,16 @@ p {
 /* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
 	.cta {
-		font-size: 2.5rem;
+		/* font-size: 2.5rem; */
 		padding: 20px 60px;
 	}
 	h1.section-title {
-		font-size: 6rem;
+		/* font-size: 6rem; */
 	}
 
 	/* Hero */
 	#hero h1 {
-		font-size: 7rem;
+		/* font-size: 7rem; */
 	}
 	/* End Hero */
 
@@ -686,4 +689,20 @@ p {
 
 .list-group-item{
   border: none;
+}
+
+.signup {
+	padding-top: 5%;
+	padding-left: 40%;
+}
+
+.login {
+	padding-top: 5%;
+	padding-left: 40%;
+}
+
+.dropdown-info {
+	padding: 10px;
+	font-size: 10px;
+	border: none;
 }
