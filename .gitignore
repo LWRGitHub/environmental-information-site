@@ -145,3 +145,5 @@ cython_debug/
 solutions.py
 solutions/
 templates/solutions/
+
+/environmental_app/database.db
