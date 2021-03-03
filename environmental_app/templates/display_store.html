@@ -5,25 +5,31 @@ Display Store
 {% endblock title %}
 
 {% block content %}
+
 <head>
     {{ business_map.js }}
 </head>
 
 <main>
-    {% for business in business_info %}
-    <p>Restaurant Name: {{ business['name'] }}</p>
-    <p>Number of Reviews: {{ business['review_count'] }}</p>
-    <p><img src="{{ business['image_url'] }}" alt="{{ business['image_url'] }} image" width="250"></p>
-    {% endfor %}
-
+    <div class='display_store'>
+        {% for business in business_info %}
+        <p>Restaurant Name: {{ business['name'] }}</p>
+        <p>Address: {{ business['location']['address1'] }}, {{ business['location']['city'] }}</p>
+        <p>Rating: {{ business['rating'] }}</p>
+        <p>Number of Reviews: {{ business['review_count'] }}</p>
+        <p><img class='api_image' src="{{ business['image_url'] }}" alt="{{ business['image_url'] }} image" width="250">
+        </p>
+        {% endfor %}
+    </div>
     <!-- {% with map=googlemap_obj("test-map", 37.4419, -122.1419,
     markers=[(37.4419, -122.1419), (37.4300, -122.1400)])
     %}
     {{map.html}}
     {{map.js}}
     {% endwith %} -->
-
-    {{ business_map.html }}
+    <div class='google_maps'>
+        {{ business_map.html }}
+    </div>
 </main>
 
 {% endblock content %}
